@@ -1,0 +1,103 @@
+
+.tile22{
+    height: 72vh;
+    background-image: url('./../../../assets/emp-women.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.5%;
+    position: relative; 
+  }
+  
+  .tile{
+    height: 72vh;
+    background-image: url('./../../../assets/U20.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.5%;
+    position: relative;
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+    filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */ 
+  }
+  .tile:hover{ 
+    -webkit-filter: grayscale(0);
+    filter: none;
+    transition: linear cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  
+  .tile.active{
+    border: 5px solid var(--dark);
+    -webkit-filter: grayscale(0);
+    filter: none;
+    transition: linear cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  .tile1{
+    margin-bottom: 2%;
+    height: 36vh;
+    background-image: url('./../../../assets/U20-74.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.5%;
+    position: relative;
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+    filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */ 
+  }
+  .tile122{
+    margin-bottom: 2%;
+    height: 36vh;
+    background-image: url('./../../../assets/emp-women.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.5%;
+    position: relative; 
+  }
+  .tile1:hover{ 
+    -webkit-filter: grayscale(0);
+    filter: none;
+    transition: linear cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  .tile1.active{
+    border: 5px solid var(--dark);
+    -webkit-filter: grayscale(0);
+    filter: none;
+    transition: linear cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  .tile2{
+    height: 36vh;
+    background-image: url('./../../../assets/U20-71.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.5%;
+    position: relative;
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+    filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */ 
+  }
+  .tile222{
+    height: 36vh;
+    background-image: url('./../../../assets/U20-66.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.5%;
+    position: relative; 
+  }
+  .tile2:hover{ 
+    -webkit-filter: grayscale(0);
+    filter: none;
+    transition: linear cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  .tile2.active{
+    border: 5px solid var(--dark);
+    -webkit-filter: grayscale(0);
+    filter: none;
+    transition: linear cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  } 
+  
+    

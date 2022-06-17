@@ -1,0 +1,167 @@
+<app-nav></app-nav>
+<div style="padding: 10%;background-color: var(--light); "> 
+  <div>
+    <span class="title margin-top" style="margin-top: 4%;" >Partner with us. </span>
+  </div>
+ 
+  <small class="tabtitle" style="color: var(--medium);">Ushanga Kenya Initiative</small>
+  <p class="margin-top"><small>We are keen to collaborate with like-minded partners in a symbiotic atmosphere to achieve our initiative's objectives.</small></p>
+</div>
+<div class="container" style="margin-bottom: 5%;">
+      <div class="row margin-top" style="margin-top: 4%;">
+        <div class="col-sm-6">
+          <div class="row">
+            <div  style="color: var(--medium);">
+              <div *ngIf="f['industry'].errors" > <small>** Kindly choose an industry or more.</small> </div>
+            </div>
+              <p class="tabtitle">Choose a sector</p> 
+              <div class="col-sm-6">
+                  <a (click)="industryclick($event)">
+                      <div class="tile margin-top" id="mining" >
+                              <div class="subtitle" style="border-radius:1%;position: absolute;
+                              bottom: 0;
+                              left: 0;
+                              padding: 3.5%;background-color: var(--light);
+                              width: fit-content;
+                                  "> 
+                                  <small class="tabtitle" style="text-transform: capitalize;margin-bottom: 0%;">Logistics</small>      
+                              </div>
+                      </div>
+                  </a>
+              </div>
+              <div class="col-sm-6">
+                  <a (click)="industryclick($event)">
+                      <div class="tile1 margin-top" id="real_estate" >
+                          <div class="subtitle" style="border-radius:1%;position: absolute;
+                          bottom: 0;
+                          left: 0;
+                          padding: 3.5%;background-color: var(--light);
+                          width: fit-content;
+                              "> 
+                              <small class="tabtitle" style="text-transform: capitalize; margin-bottom: 0%;">Finance</small>         
+                          </div>
+                      </div>
+                  </a>
+                  <a (click)="industryclick($event)"  >
+                      <div class="tile2 margin-top" id="retail_business">
+                          <div class="subtitle" style="border-radius:1%;position: absolute;
+                          bottom: 0;
+                          left: 0;
+                          padding: 3.5%;background-color: var(--light);
+                          width: fit-content;
+                              "> 
+                              <small class="tabtitle" style="text-transform: capitalize; margin-bottom: 0%;">Other</small>
+                  
+                          </div>
+                      </div>
+                  </a>
+              </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="margin-mob-sm">
+              <p class="tabtitle margin-top">Join our partner programs</p> 
+    
+                <div>
+                    <form class="margin-top" style="margin-top:5%" [formGroup]="form" (ngSubmit)="submit()">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- Name input -->
+                                <div class="form-outline mb-4">
+                                    <input formControlName="name" type="text" id="name" class="form-control form-control-sm" />
+                                    <label class="form-label" for="name">Name</label>
+                                    <div *ngIf="f['name'].touched && f['name'].invalid" style="color: var(--medium);">
+                                      <div *ngIf="f['name'].errors && f['name'].errors['required']" > <small>** Name is required.</small> </div>
+                                      <div *ngIf="f['name'].errors && f['name'].errors['minlength']" > <small>** Make sure your name is more than 3 letters.</small> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- Email input -->
+                                <div class="form-outline mb-4">
+                                    <input formControlName="email" type="email" id="email" class="form-control form-control-sm" />
+                                    <label class="form-label" for="email">Email address</label>
+                                    <div *ngIf="f['email'].touched && f['email'].invalid" style="color: var(--medium);">
+                                      <div *ngIf="f['email'].errors && f['email'].errors['required']" > <small>** Email is required.</small> </div>
+                                      <div *ngIf="f['email'].errors && f['email'].errors['email']" > <small>** Make sure your Email is in the correct format .</small> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+  
+                        <div class="row">
+                          <!-- Message input -->
+                          <div class="form-outline mb-4">
+                            <textarea formControlName="message" class="form-control form-control-sm" id="form4Example3" rows="2"></textarea>
+                            <label class="form-label" for="message">Message</label>
+                            <div *ngIf="f['message'].touched && f['message'].invalid" style="color: var(--medium);">
+                              <div *ngIf="f['message'].errors && f['message'].errors['required']" > <small>** Message is required.</small> </div>
+                            </div>
+                          </div> 
+                        </div>
+                      
+                        <div style="width:100%;margin-top: 4%;">
+                          
+                            <div> 
+                              <small class="tabtitle" style="margin-top: 4%;margin-bottom: 4%;"> Pick your image/document uploads</small>
+                            </div>
+                            <div class="my-3">
+                                <label>
+                                    <input
+                                    style="font-size: 10px;"
+                                      type="file"
+                                      class="text-nowrap text-truncate"
+                                      (change)="selectFile($event)"
+                                    />
+                                  </label>
+                                  <button
+                                    class="btn-success btn-sm"
+                                    style="font-size: 10px;"
+                                    [disabled]="!selectedFiles"
+                                    (click)="upload()"
+                                  >
+                                    Upload
+                                  </button>
+                                  <div *ngIf="currentFileUpload" class="progress mt-2">
+                                    <div
+                                      class="progress-bar progress-bar-info"
+                                      role="progressbar"
+                                      attr.aria-valuenow="{{ percentage }}"
+                                      aria-valuemin="0"
+                                      aria-valuemax="100"
+                                      [ngStyle]="{ width: percentage + '%' }"
+                                    >
+                                      {{ percentage }}%
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="my-2">
+                                <div class="card shadow-0">
+                                    <div class="card-header" *ngIf="fileUploads?.length"> <p style="margin-bottom:0px"><small>List of Files</small></p> </div>
+                                    <ul
+                                      class="list-group list-group-flush"
+                                      *ngFor="let file of fileUploads"
+                                      style="max-height: 50vh; overflow-y: auto; "
+                                    >
+                                      <li class="list-group-item">
+                                        <a href="{{file.url}}"><span style=" "> {{ file.name }}  </span></a>
+                                        <a (click)="deleteFileUpload(file)"
+                                          style="cursor: pointer; float: right; text-decoration: underline; color: red;">
+                                          <small style="font-size: 10px;">Delete</small>
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                            </div>
+                        </div>
+                      
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-custom1 shadow-0"  [disabled]="form.invalid" type="submit">Submit</button>
+                      
+                    </form>
+  
+                </div>
+            </div>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,63 @@
+<app-nav></app-nav>
+<div class="row">
+    <div class="col-sm-5 contactbanner">
+
+    </div>
+    <div class="col-sm-4">
+        <div class="vertcent margin-mob" style="padding: 8%;"> 
+            <p class="title" style="color: black!important;line-height: 100%;">Get in touch</p> 
+
+            <p class="margin-top">
+              <small>
+            Fill out the form below to contact our team <br>
+            or <a target="_blank" href="https://www.google.com/maps/place/Maktaba+Kuu+Building+-+Kenya+National+Library+Service/@-1.2949173,36.8093402,17z/data=!4m12!1m6!3m5!1s0x182f11c8824adfff:0xadb9908d4929ab8b!2sMaktaba+Kuu+Building+-+Kenya+National+Library+Service!8m2!3d-1.2949584!4d36.8115356!3m4!1s0x182f11c8824adfff:0xadb9908d4929ab8b!8m2!3d-1.2949584!4d36.8115356">
+            visit us </a>at our offices at Ushanga Initiative Offices, Maktaba Kuu Building, Upperhill, 6th Floor.</small>  
+            </p>
+
+
+            <div class="margin-top">
+              <form  [formGroup]="form" (ngSubmit)="submit()">
+                    <!-- Name input -->
+                    <div class="form-outline mb-4">
+                      <input type="text" formControlName="name" id="form4Example1" class="form-control form-control-sm" />
+                      <label class="form-label" for="name">Name</label>
+                      <div *ngIf="f['name'].touched && f['name'].invalid" style="color: var(--medium);">
+                        <div *ngIf="f['name'].errors && f['name'].errors['required']" > <small>** Name is required.</small> </div> 
+                      </div>
+                    </div>
+                  
+                    
+                      <!-- Email input -->
+                      <div class="form-outline mb-4">
+                        <input type="email" formControlName="email" id="form5Example2" class="form-control  form-control-sm" />
+                        <label class="form-label" for="email">Email address</label>
+                        <div *ngIf="f['email'].touched && f['email'].invalid" style="color: var(--medium);">
+                          <div *ngIf="f['email'].errors && f['email'].errors['required']" > <small>** Email is required.</small> </div>
+                          <div *ngIf="f['email'].errors && f['email'].errors['email']" > <small>** Make sure the Email is in the correct format.</small> </div>
+          
+                      </div>
+                      </div>   
+                  
+                    <!-- Message input -->
+                    <div class="form-outline mb-4">
+                      <textarea formControlName="message" class="form-control form-control-sm" id="form4Example3" rows="4"></textarea>
+                      <label class="form-label" for="message">Message</label>
+                      <div *ngIf="f['message'].touched && f['message'].invalid" style="color: var(--medium);">
+                        <div *ngIf="f['message'].errors && f['message'].errors['required']" > <small>** Message is required.</small> </div>
+        
+                    </div>
+                    </div> 
+                  
+                    <!-- Submit button -->
+                    <button class="btn btn-custom shadow-0"  [disabled]="form.invalid" type="submit">Submit message</button>
+              </form>
+            </div>
+
+            
+        </div>
+    </div>
+    
+    <div class="col-sm-3 contactbanner2">
+
+    </div>
+</div>
