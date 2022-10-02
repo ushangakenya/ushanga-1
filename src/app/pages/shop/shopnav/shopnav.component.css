@@ -1,0 +1,72 @@
+.btn-link:hover {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent;
+} 
+.fa-user{
+    position:relative;
+    font-size: 1.4rem;
+} 
+.far[data-count]{
+    position:relative;
+    font-size: 1.4rem;
+}
+.far[data-count]:after{
+    position: absolute;
+    right: -0.95em;
+    top: -.75em;
+    content: attr(data-count);
+    padding: .2em;
+    border-radius: 50%;
+    border: white 2px solid;
+    line-height: .9em;
+    color: black;
+    background: rgba(226, 51, 51, 0.95);
+    text-align: center;
+    min-width: 2em;
+    font: bold .4em sans-serif;
+    font-family: 'Raleway', sans-serif; 
+} 
+.cartsvg[data-count]{
+    position:relative;
+    font-size: 1.4rem;
+}
+
+.notify-badge{
+    position: absolute;
+    right: -0.95em;
+    top: -.75em;
+    content: attr(data-count);
+    padding: .2em;
+    border-radius: 50%;
+    border: white 2px solid;
+    line-height: .9em;
+    color: black;
+    background: rgba(231, 217, 19, 0.95);
+    text-align: center;
+    min-width: 2em;
+    font: bold 1em sans-serif;
+     font-family: 'Raleway', sans-serif;
+    outline: none;
+}
+.fas[data-count]{
+    position:relative;
+    font-size: 1.4rem;
+}
+.fas[data-count]:after{
+    position: absolute;
+    right: -0.95em;
+    top: -.75em;
+    content: attr(data-count);
+    padding: .2em;
+    border-radius: 50%;
+    border: white 2px solid;
+    line-height: .9em;
+    color: black;
+    background: rgba(231, 217, 19, 0.95);
+    text-align: center;
+    min-width: 2em;
+    font: bold .4em sans-serif;
+     font-family: 'Raleway', sans-serif;
+    outline: none;
+} 

@@ -1,0 +1,74 @@
+<div class="container-fluid" style="padding: 2%; display: flex;">
+    <div style='margin: 0 auto;'> 
+        <h1 class="tabtitle vertcent" style="font-size: 22px!important; margin-bottom: 0%;">
+            <!-- <small style="color: var(--dark);">USHANGA</small> -->
+        </h1>
+    </div>
+    <div style="float: right;">
+        <section  >
+            <!-- Facebook -->
+            <!-- <a
+            class="btn btn-link text-dark m-1 "
+            href="#!"
+            role="button" 
+            >
+                <i class="far fa-heart" data-count="2"></i>
+            </a> 
+             -->
+     
+            <a 
+            class="btn btn-link text-dark js-toggle-cart" 
+            role="button" 
+            >
+                <div style="position: relative;
+                display:inline-block; ">
+                    <span class="badge notify-badge">3</span>
+                    <img class="cartsvg" src="./../../../../assets/shopping-bag-svgrepo-com.svg" data-count="2" style="height: 25px; width:25px" alt="">   
+                </div>
+            </a>
+
+            <a 
+                *ngIf="!(auth.user$ | async)"
+                class="btn btn-link text-dark m-1"
+                [routerLink]="['/login']"
+                role="button" 
+                >
+                    <i class="far fa-user"></i> 
+            </a> 
+
+            <span *ngIf="auth.user$ | async as user">
+                <a 
+                *ngIf="user.coop"
+                class="btn btn-link text-dark m-"
+                [routerLink]="['/cooperatives']"
+                role="button" 
+                >
+                <div class="profile-btn" *ngIf="auth.user$ | async as user">
+                    
+                    <img *ngIf="!user.photoURL" src="https://assets.codepen.io/3306515/IMG_2025.jpg" />
+        
+                    <img *ngIf="user.photoURL" [src]="user.photoURL">
+                    &nbsp;&nbsp;
+                    <span>{{ user.displayName }}</span>
+                  </div>
+                </a> 
+                <a 
+                *ngIf="!user.coop"
+                class="btn btn-link text-dark m-"
+                [routerLink]="['/login']"
+                role="button" 
+                >
+                <div class="profile-btn" *ngIf="auth.user$ | async as user">
+                    
+                    <img *ngIf="!user.photoURL" src="https://assets.codepen.io/3306515/IMG_2025.jpg" />
+        
+                    <img *ngIf="user.photoURL" [src]="user.photoURL">
+                    &nbsp;&nbsp;
+                    <span>{{ user.displayName }}</span>
+                  </div>
+                </a>  
+            </span>
+              
+        </section>
+    </div>
+</div>

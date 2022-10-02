@@ -19,7 +19,14 @@ import { NotificationService } from './notification.service';
 export class AuthService {
   
   user$: Observable<any>;
+  userID: any;
   ts:any;
+
+  coopCollection!: AngularFirestoreCollection<any>;
+  coops!: Observable<any[]>;
+  coopDoc?: AngularFirestoreDocument<any>;
+
+
   blogCollection!: AngularFirestoreCollection<Blog>;
   blogs!: Observable<Blog[]>;
   blogDoc?: AngularFirestoreDocument<Blog>;
@@ -32,6 +39,9 @@ export class AuthService {
   careers!: Observable<Career[]>;
   careerDoc?: AngularFirestoreDocument<Career>;
 
+  product!: AngularFirestoreDocument<any>;
+
+
   status!:boolean;
   
   constructor(private afAuth: AngularFireAuth,
@@ -42,6 +52,7 @@ export class AuthService {
         switchMap(user => {
             // Logged in
           if (user) { 
+            this.userID = user.uid
             this.afs.doc<User>(`users/${user.uid}`).snapshotChanges().subscribe(e=>{
               if(e.payload.data()?.verified){
                 console.log('auth true')
@@ -63,6 +74,67 @@ export class AuthService {
       }))
     }
 
+    getAllCooperativeMembers(): any { 
+      this.coopCollection = this.afs.collection('cooperative_members', ref => ref.orderBy('dor','desc'));
+      return this.coopCollection
+        .snapshotChanges().pipe(
+          map(actions => {
+          return actions.map(a => {
+              const data = a.payload.doc.data() as Blog;
+              const id = a.payload.doc.id;
+              return { id, ...data };
+          });
+          })
+      );
+    }
+
+    getAllProducts():any {
+      this.coopCollection = this.afs.collection('products', ref => ref.orderBy('uploadDate','desc'));
+      return this.coopCollection
+        .snapshotChanges().pipe(
+          map(actions => {
+          return actions.map(a => {
+              const data = a.payload.doc.data() as Blog;
+              const id = a.payload.doc.id;
+              return { id, ...data };
+          });
+          })
+      );
+    }
+
+    createProduct(form: any){
+      const productRef = this.afs.collection('products');
+      const productUp = { cooperativeID:this.userID , owner: form.owner,
+        county: form.county, location: form.location, name: form.name, price: form.price,
+        status: form.status, uploadDate: form.uploadDate, imageURL:form.imageURL
+      };
+      return productRef.add({ ...productUp }); 
+    }
+
+    updateProduct(form:any){ 
+      const productRef = this.afs.collection('products');
+      return productRef.doc(form.id).set( form );
+    }
+
+    deleteProduct(id: string | undefined){
+      const productRef = this.afs.collection('products');
+      productRef.doc(id).delete();
+    }
+
+    imageURLS(url:any){
+      const imageRef = this.afs.collection('productImages');
+      const imageUp = { url:url, status: 0}
+      return imageRef.add({ ...imageUp }); 
+    }
+
+    getOwner(id: any){ 
+      this.afs.doc(`cooperative_members/${id}`).valueChanges().subscribe((e: any)=>{
+        // console.log('e',e.name)
+        return e.name
+      })
+    }
+  
+
     // Sign in with Google
     async googleSignin() {
       return this.AuthLogin(new  firebase.auth.GoogleAuthProvider());
@@ -75,8 +147,8 @@ export class AuthService {
       }).catch((error) => {
           console.log(error)
       })
-    }
-
+    } 
+    
     updateUserData(user: any) { 
       // Sets user data to firestore on login
       const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
@@ -138,9 +210,9 @@ export class AuthService {
     })
   }
 
-  createBlog(blog: Blog){
-    return this.afs.collection('blogs').add(blog)
-  }
+createBlog(blog: Blog){
+  return this.afs.collection('blogs').add(blog)
+}
 
 deleteBlog(blog_id: string){
   this.afs.doc('blogs/' + blog_id).delete();

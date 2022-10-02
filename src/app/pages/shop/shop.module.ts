@@ -4,11 +4,14 @@ import { CommonModule } from '@angular/common';
 
 import { ShopRoutingModule } from './shop-routing.module';
 import { ShopComponent } from './shop.component';
+import { ShopnavComponent } from './shopnav/shopnav.component';
+import { CartComponent } from '../shared/cart/cart.component';
 
 
 @NgModule({
   declarations: [
-    ShopComponent
+    ShopComponent,
+    ShopnavComponent
   ],
   imports: [
     CommonModule,

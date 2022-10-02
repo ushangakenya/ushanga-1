@@ -18,7 +18,24 @@ const routes: Routes = [{path:"",component:HomeComponent},
 {
   path: 'contact',
   loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule)
+},
+{
+  path: 'login',
+  loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
+},
+{
+  path: 'user-profile',
+  loadChildren: () => import('./pages/user-profile/user-profile.module').then(m => m.UserProfileModule)
+},
+{
+  path: 'cooperatives',
+  loadChildren: () => import('./pages/coop-login/coop-login.module').then(m => m.CoopLoginModule)
+},
+{
+  path: 'admin',
+  loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule)
 }
+
 ];
 
 @NgModule({

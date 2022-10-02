@@ -1,8 +1,9 @@
 :root {
-    --primary-color: #eee54e;
-    --dark: hsl(36, 75%, 45%);
-    --medium: hsl(36, 75%, 66%);
-    --light: hsl(36, 75%, 93%); 
+    --primary-color: hsl(324, 49%, 50%);
+    --dark: hsl(324, 49%, 45%);
+    --medium: hsl(324, 49%, 78%);
+    --light: hsl(324, 49%, 98%); 
+    --ushanga-yellow:var(--dark)
   }
 
   ::-webkit-scrollbar-track
@@ -78,6 +79,41 @@ body {
 }
 .navlogo{
   height: 350px
+}
+
+@media screen and (min-width: 5000px) {
+  .carousel-fade .carousel-item {
+    height: 892px!important;
+  }
+  .carousel-caption{
+    padding-bottom: 11.25rem;
+  }
+  .ushatab{
+    font-size: 34px;
+  }
+}
+
+@media screen and (min-device-width: 5000px) {
+  .carousel-fade .carousel-item {
+    height: 892px!important;
+  }
+  .carousel-caption{
+    padding-bottom: 11.25rem;
+  }
+  .ushatab{
+    font-size: 34px;
+  }
+
+}
+@media screen and (min-width: 1600px) {
+  .carousel-fade .carousel-item {
+    height: 1500px!important;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .carousel-fade .carousel-item {
+    height: 1500px!important;
+  }
 }
 
 @media only screen and (max-width: 413px){
@@ -506,7 +542,7 @@ body {
     z-index: 1005;
   }
   .menu{
-    color: black;
+    color: var(--medium)!important;
   }
   
   .nav-toggle input + label::before,
@@ -823,4 +859,121 @@ button.toast-close-button {
 .btn-custom1{
   background-color: var(--light)!important;
   font-weight: bold;
+}  
+.searchbox{
+  border: 1px solid var(--dark);padding: 2%; width:100%;
+}
+.searchbox:hover{
+  border: 2px solid var(--medium);padding: 2%; width:100%;
+}
+.searchbox:focus-visible{
+  border: 2px solid var(--medium)!important; 
+}
+
+.btn-google{
+  border: 1px solid #de5246 ;
+  background-color: #de5246;
+  padding: 2%;
+}
+
+.btn-signin{
+  margin-top: 4%;
+  padding: 3%;
+  color: var(--dark);
+  border: 1px solid lightgrey;
+  width: 70%;
+}
+
+.loginbanner{ 
+  background-image: url('./assets/U20-10.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+
+.mosimage{width: 100%; display: block;}
+.mosaics {  
+    overflow: hidden; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.mosaic {
+  width: 33.33%; 
+  float: left; 
+  overflow: hidden;
+  position: relative;
+  
+}
+.mosaic:after {
+  content: " ";
+  position: absolute;
+  display: block;
+  z-index: 2;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; 
+  box-sizing: border-box;
+}
+.mosaic:nth-child(15n+4) {
+  width: 100%;
+}
+@media (max-width: 550px) {
+  .mosaic { 
+    float: none;
+    width: 100% !important;
+  }
 } 
+
+.subtitle{
+     
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+
+.profile-btn {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  border-left: 2px solid #ddd;
+}
+.profile-btn img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+.profile-btn span {
+  color: var(--dark);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+}
+@media screen and (max-width: 720px) {
+  .app-name, .profile-btn span {
+      display: none;
+ }
+
+ .profile-btn img {
+  width: 24px;
+  height: 24px;
+}
+}
+.like{
+  color: red;
+}
+
+.filter_text{
+  letter-spacing: 1px; 
+}
+.form-label{
+  color: var(--dark)!important;
+}

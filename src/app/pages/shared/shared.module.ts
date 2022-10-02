@@ -7,17 +7,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ToastrModule } from 'ngx-toastr';
-
+import { CartComponent } from './cart/cart.component'; 
+import { PhonePipe } from './phone/phone.pipe';
+ 
 @NgModule({
   declarations: [
-    NavComponent
+    NavComponent,
+    CartComponent,
+    PhonePipe
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
-    ToastrModule.forRoot(), // ToastrModule added
+    ToastrModule.forRoot(), // ToastrModule added 
     
   ],
-  exports:[NavComponent]
+  exports:[NavComponent,CartComponent,PhonePipe]
 })
 export class SharedModule { }

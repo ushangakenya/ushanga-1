@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   firebaseConfig :{
-    apiKey: "AIzaSyAlC0JOaiUkvHlG_F9fpHeAfJnuBT_AAz0",
-    authDomain: "ushanga-prot.firebaseapp.com",
-    projectId: "ushanga-prot",
-    storageBucket: "ushanga-prot.appspot.com",
-    messagingSenderId: "1015924746561",
-    appId: "1:1015924746561:web:4b3e98e1e1ee0900aad9c0",
-    measurementId: "G-V7RTQSRG84"
+    apiKey: "AIzaSyDCv9VTgFnVnDN3Q4Yqr79PkfubYFBMYJM",
+    authDomain: "ushanga-alpha.firebaseapp.com",
+    projectId: "ushanga-alpha",
+    storageBucket: "ushanga-alpha.appspot.com",
+    messagingSenderId: "475491525681",
+    appId: "1:475491525681:web:d38491273613d3b5336110",
+    measurementId: "G-F50K3R5D64"
   }
 };

@@ -14,14 +14,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './nav/footer/footer.component';
-import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { LazyLoadImageModule } from 'ng-lazyload-image';  
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ApprouchComponent,
-    FooterComponent
+    FooterComponent 
   ],
   imports: [
     BrowserModule,
