@@ -34,6 +34,10 @@ const routes: Routes = [{path:"",component:HomeComponent},
 {
   path: 'admin',
   loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule)
+},
+{
+  path: 'checkout',
+  loadChildren: () => import('./pages/checkout/checkout.module').then(m => m.CheckoutModule)
 }
 
 ];

@@ -1,0 +1,107 @@
+<app-nav></app-nav>
+
+<div class="background-image" [ngStyle]="{'background-image': 'url(' + product.imageURL + ')'}"></div>
+<div class="content">
+    <div class="checkout-container"> 
+        <div class="left-side" [ngStyle]="{'background-image': 'url(' +  product.imageURL + ')'}" >
+          <div class="text-box" style="padding: 6%;">
+            <h1 class="home-heading subtitle">{{product.name}}</h1>
+            <!-- <p class="home-price"><em>KES 1,000.00</em> per item</p> -->
+            <!-- <hr class="left-hr" /> -->
+            <p class="home-desc"><em>{{product.group}}</em> from <em>{{product.county}}</em></p>
+            <p class="home-desc">
+              <em> {{product.uploadDate.toDate() | date:'medium'}} </em> 
+            </p>
+          </div>
+        </div>
+  
+        <div class="right-side">
+          <div class="receipt">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="vertcent">
+                      <h2 class="title ">Receipt Summary</h2> 
+                      <div>
+                        <span *ngIf="product.status == 1" style='color: green; border-radius:5px; padding-left:4%;padding-right:4%;padding-bottom:3%;background-color:lightgreen;'><small style="letter-spacing: 1px; font-size: 10px;">Active</small></span>
+                        <span *ngIf="product.status == 0" style='color: blue; border-radius:5px; padding-left:4%;padding-right:4%;padding-bottom:3%; background-color:lightblue;'><small style="letter-spacing: 1px; font-size: 10px; " >Sold</small></span>
+                      </div>  
+                    </div>                 
+                </div>
+                <div class="col-sm-6">
+                    <qr-code [value]="data" [size]="150"></qr-code>
+                    <p style="letter-spacing: 1px;font-size: 10px;"><small>Scan the QR code for the history of the product</small></p>
+
+                </div>
+            </div>
+            
+            <div *ngIf="product.status == 0">
+              <!-- <p>{{product.transaction}}</p> -->
+              <p>Your payment is being successful, we will contact you within 2 business days</p> 
+            </div>
+            <div *ngIf="processing && product.status == 1">
+              <!-- <p>{{product.transaction}}</p> -->
+              <p>Your payment is being processed</p>
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle 
+                  cx="50" cy="50" r="30"
+                  fill="transparent"
+                  stroke-width="8px"
+                  stroke-dasharray="160"
+                />
+              </svg>
+            </div>
+             <div *ngIf="!processing && product.status == 1">
+              
+               <table >
+                <!-- <tr>
+                  <td>BEADED LEATHER HAND BAG</td>
+                  <td class="price">1000.00 KES</td>
+                </tr>
+                <tr>
+                  <td>Discount</td>
+                  <td class="price">0.00 KES</td>
+                </tr>  -->
+                <tr class="subtitle">
+                  <td>     
+                    <img src="./../../../assets/pngegg.png" style="height: 130px; width:auto" alt="">
+                  </td>
+                  <td class="subtitle" style="font-size: 25px">{{product.price   | currency : 'KES '}}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+  
+          <div *ngIf="!processing && product.status == 1" class="payment-info">
+             
+            <p style="letter-spacing: 1px;">
+                <small>
+                    On clicking 'proceed to payment', you will then be prompted with a payment screen on your phone. Upon 
+                    processing, you will receive a confirmation message and once your order is processed, our team will contact you via both text & call.
+                </small>
+                
+            </p>
+            <!-- <p style="letter-spacing: 1px;" class="text-grey"><small>Note: </small></p> -->
+ 
+            <form style="margin-top: 4%"
+              class="form-box"
+              enctype="text/plain"
+              method="get"
+              target="_blank"
+              [formGroup]="myForm" (ngSubmit)="onSubmit(id,product.price)" novalidate
+            > 
+              <div class="form-outline">
+                <input formControlName="phoneNumber" type="text" id="phoneNumber" class="form-control form-control-sm" />
+                <label class="form-label" for="phoneNumber">Mpesa Mobile No</label>
+                <div *ngIf="f['phoneNumber'].touched && f['phoneNumber'].invalid" style="color: var(--medium);">
+                  <small>** Mobile Number is not Valid.</small>
+                </div>
+            </div>  
+  
+            <button class="btn btn-sm btn-primary" style="padding: 10px;" [disabled]="!myForm.valid" type="submit"> <small style="letter-spacing: 1px;">Proceed to Payment</small> </button>
+            <a [routerLink]="['/shop']" routerLinkActive="router-link-active"  class="subtitle" style="text-align: center; letter-spacing: 1px; font-size: 12px;"> <small> Cancel Order </small> </a>
+          
+            </form> 
+          </div>
+        </div>
+    </div>
+</div> 

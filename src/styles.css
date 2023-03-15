@@ -343,7 +343,7 @@ body {
   }
 
 .carousel-fade .carousel-item {
-    height: 500px!important;
+    height:600px!important;
   }
   .carousel-indicators { 
     justify-content: flex-start; 
@@ -421,8 +421,9 @@ body {
     background:rgba(0,0,0,0.1);
   }
   .carousel .carousel-inner .carousel-item > img {
-    height: 100%; width: 100%; object-fit: cover;
-    background-position: center;
+    height: auto; 
+    width: 100%; 
+    object-fit: cover; 
     image-rendering: auto;
     image-rendering: crisp-edges;
     image-rendering: pixelated;
@@ -596,10 +597,12 @@ body {
     
   .linknav{ 
     color: var(--dark);
-    margin: 1rem 0; 
+    padding-left: 4%;
+    
+    padding-right: 4%;
     cursor: pointer;	 
     font-family: 'Raleway', sans-serif!important;
-    font-size: 33px!important;
+    font-size: 25px!important;
     font-weight: bold!important;
     text-decoration: none; 
   }

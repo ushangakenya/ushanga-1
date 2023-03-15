@@ -1,286 +1,396 @@
 <app-nav></app-nav>
 <app-shopnav></app-shopnav>
-<div class="container-fluid" style="padding: 4%;">
-    <div class="row margin-mob">
-        <div class="col-sm-3"> 
-            <div class="vertcent">
-                <div style="margin-bottom: 4%;">
-                    <span class="title margin-top" style="margin-top: 4%; color: var(--ushanga-yellow); line-height: 100%;font-size: 3rem;" >Ushanga Market</span>
-                </div>
-                <small class="tabtitle" style="color: black;font-size: 0.75rem; ">Linking traditional talent to modern markets</small>
-                <p style="margin-top: 5%">
-                    <small style="color: grey ;">
-                    In a bid to promote the economic empowerment of the women from our pastoral communities, all products within our catalogue are locally sourced from within our 7 counties of operation in Kenya 
-                    </small>
-                </p>
-            </div>
+<div class="container-fluid" style="padding: 4%">
+  <div class="row margin-mob">
+    <div class="col-sm-3">
+      <div class="vertcent">
+        <div style="margin-bottom: 4%">
+          <span
+            class="title margin-top"
+            style="
+              margin-top: 4%;
+              color: var(--ushanga-yellow);
+              line-height: 100%;
+              font-size: 3rem;
+            "
+            >Ushanga Market</span
+          >
         </div>
-        <div class="col-sm-9">
-            <div class="row">
-                <div class="col-sm-3">
-                    <a style="color: black;cursor: pointer;">
-                        <img src="./../../../assets/U20-59.jpg" class="catBanner" />
-                        
-                        <h2 class="tabtitle" style="margin-top: 4%;font-weight: bold;">Home Furnishings</h2>
-                        <!-- <p style=" letter-spacing: 1px;color: var(--medium);font-size: 12px;">Sambeya, Narok</p> -->
-                    </a>
-                </div>
-                <div class="col-sm-3">
-                    <a style="color: black;cursor: pointer;">
-                        <img src="./../../../assets/U20-142.jpg" class="catBanner"/>
-                        
-                        <h2 class="tabtitle" style="margin-top: 4%;font-weight: bold;">Accessories</h2>
-                        <!-- <p style=" letter-spacing: 1px;color: var(--medium);font-size: 12px;">Sambeya, Narok</p> -->
-                    </a>
-                </div>
-                <div class="col-sm-3">
-                    <a style="color: black;cursor: pointer;">
-                        <img src="./../../../assets/U20-130.jpg" class="catBanner"/>
-                        
-                        <h2 class="tabtitle" style="margin-top: 4%;font-weight: bold;">Jewelery</h2>
-                        <!-- <p style=" letter-spacing: 1px;color: var(--medium);font-size: 12px;">Sambeya, Narok</p> -->
-                    </a>
-                </div>
-                <div class="col-sm-3">
-                    <a style="color: black;cursor: pointer;">
-                        <img src="./../../../assets/U20-10.jpg" class="catBanner"/>
-                        
-                        <h2 class="tabtitle" style="margin-top: 4%;font-weight: bold;">Cultural Collectables</h2>
-                        <!-- <p style=" letter-spacing: 1px;color: var(--medium);font-size: 12px;">Sambeya, Narok</p> -->
-                    </a>
-                </div>
-            </div> 
-        </div>
+        <small class="tabtitle" style="color: black; font-size: 0.75rem"
+          >Linking traditional talent to modern markets</small
+        >
+        <p style="margin-top: 5%">
+          <!-- <small style="color: grey">
+            In a bid to promote the economic empowerment of the women from our
+            pastoral communities, all products within our catalogue are locally
+            sourced from within our 7 counties of operation in Kenya
+          </small> -->
+        </p>
+      </div>
     </div>
-</div>
-<div class="container-fluid">
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-3">
+          <a style="color: black; cursor: pointer">
+            <img src="./../../../assets/products21-3.jpg" class="catBanner" />
 
+            <h2 class="tabtitle" style="margin-top: 4%; font-weight: bold">
+              Home Furnishings
+            </h2>
+            <!-- <p style=" letter-spacing: 1px;color: var(--medium);font-size: 12px;">Sambeya, Narok</p> -->
+          </a>
+        </div>
+        <div class="col-sm-3">
+          <a style="color: black; cursor: pointer">
+            <img src="./../../../assets/IMG_3526.jpg" class="catBanner" />
+
+            <h2 class="tabtitle" style="margin-top: 4%; font-weight: bold">
+              Accessories
+            </h2>
+            <!-- <p style=" letter-spacing: 1px;color: var(--medium);font-size: 12px;">Sambeya, Narok</p> -->
+          </a>
+        </div>
+        <div class="col-sm-3">
+          <a style="color: black; cursor: pointer">
+            <img src="./../../../assets/IMG_5494.jpg" class="catBanner" />
+
+            <h2 class="tabtitle" style="margin-top: 4%; font-weight: bold">
+              Jewelery
+            </h2>
+            <!-- <p style=" letter-spacing: 1px;color: var(--medium);font-size: 12px;">Sambeya, Narok</p> -->
+          </a>
+        </div>
+        <div class="col-sm-3">
+          <a style="color: black; cursor: pointer">
+            <img src="https://firebasestorage.googleapis.com/v0/b/ushanga-alpha.appspot.com/o/productImages%2F1666691608674?alt=media&token=a0adb9f8-30a1-4bf3-ade4-a48d4543009a" class="catBanner" />
+
+            <h2 class="tabtitle" style="margin-top: 4%; font-weight: bold">
+              Cultural Collectables
+            </h2>
+            <!-- <p style=" letter-spacing: 1px;color: var(--medium);font-size: 12px;">Sambeya, Narok</p> -->
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div style="padding: 2%;background-color: var(--light); "> 
+<div class="container">
+  <ais-instantsearch [config]="config">
+    <ais-infinite-hits
+      showPreviousLabel="Show previous results"
+      showMoreLabel="Show more results"
+    >
+      <div class="row">
+        <div class="row">
+          <ais-configure
+            [searchParameters]="{ hitsPerPage: 10 }"
+          ></ais-configure>
+
+          <ng-template
+            let-hits="hits"
+            let-results="results"
+            let-refinePrevious="showPrevious"
+            let-refineNext="showNext"
+          >
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <small
+                      class="tabtitle"
+                      style="color: var(--dark); font-size: 0.75rem"
+                      >Categories</small
+                    >
+
+                    <ais-refinement-list
+                      attribute="category"
+                      [limit]="5"
+                      [showMore]="false"
+                      [showMoreLimit]="10"
+                      showMoreLabel="Show more"
+                      showLessLabel="Show less"
+                      [autoHideContainer]="true"
+                    ></ais-refinement-list>
+
+                    <!-- <div class="filters">
+                      <input type="checkbox" id="Home" />
+                      <label for="Home">
+                        <small class="filter_text">Home Furnishings</small>
+                      </label>
+                    </div> -->
+
+                    <!-- <div class="filters">
+                      <input type="checkbox" id="Accessories" />
+                      <label for="Accessories">
+                        <small class="filter_text">Accessories</small>
+                      </label>
+                    </div>
+                    <div class="filters">
+                      <input type="checkbox" id="JEWELERY" />
+                      <label for="JEWELERY">
+                        <small class="filter_text">Jewelery</small>
+                      </label>
+                    </div>
+                    <div class="filters">
+                      <input type="checkbox" id="CULTURAL COLLECTABLES" />
+                      <label for="CULTURAL COLLECTABLES">
+                        <small class="filter_text">Cultural Collectables</small>
+                      </label>
+                    </div> -->
+                  </div>
+                  <div class="row" style="margin-top: 16%">
+                    <small
+                      class="tabtitle"
+                      style="
+                        color: var(--dark);
+                        font-size: 0.75rem;
+                        margin-bottom: 4%;
+                      "
+                      >Counties</small
+                    >
+                    <ais-refinement-list
+                      attribute="county"
+                      [limit]="5"
+                      [showMore]="false"
+                      [showMoreLimit]="10"
+                      showMoreLabel="Show more"
+                      showLessLabel="Show less"
+                      [autoHideContainer]="true"
+                    ></ais-refinement-list>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-9">
+                <div style="margin-top: 2%" >
+                  <ais-search-box
+                    placeholder="        Search our catalogue"
+                  ></ais-search-box>
+              
+                  <small style="font-size: 10px; letter-spacing: 1px"
+                    ><ais-stats></ais-stats
+                  ></small>
+                </div>
+
+                <div *ngIf="hits.length === 0">
+                  No results have been found for {{ results?.query }}.
+                </div>
+                <div class="row" style="margin-bottom: 4%">
+                  <div *ngFor="let hit of hits" class="col-sm-4 products">
+                    <a style="color: black; cursor: pointer">
+                      <img [src]="hit.imageURL" class="productBanner" />
+
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: space-around;
+                          margin-top: 6%;
+                        "
+                      >
+                        <div>
+                          <h2
+                            class="tabtitle"
+                            style="margin-top: 4%; font-weight: bold"
+                          >
+                            {{ hit.name }}
+                          </h2>
+                          <p style="letter-spacing: 1px; font-size: 12px">
+                            {{ hit.category }}
+                          </p>
+                          <p
+                            style="
+                              letter-spacing: 1px;
+                              font-size: 12px;
+                              color: lightgrey;
+                            "
+                          >
+                          {{ hit.group }}, {{ hit.county }}
+                          </p>
+
+                          <h2
+                            class="tabtitle"
+                            style="
+                              margin-top: 4%;
+                              color: var(--ushanga-yellow);
+                              font-weight: bold;
+                            "
+                          >
+                            {{ hit.price | currency: "KES " }}
+                          </h2>
+                        </div>
+                        &nbsp;
+                        <a [routerLink]="[ '/checkout',hit.objectID]" class="js-toggle-cart">
+                          <small class="filter_text cart-plus vertcent"
+                            ><i class="fas fa-plus"></i>
+                          </small>
+                        </a>
+                        <!-- <a class="like">
+                          <i class="far fa-heart" data-count="2"></i>
+                        </a> -->
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </ais-infinite-hits>
+  </ais-instantsearch>
+</div>
+<!-- <div style="padding: 2%;background-color: var(--light); "> 
     <div class="row margin-mob"> 
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
             <div style="display: flex; justify-content: space-around">
                 <input type="text" class="searchbox" placeholder="Type to search">
-                <!-- &nbsp;
-                <a style="padding: 2%; border: 1px solid var(--dark); color:var(--dark);float:right">
-                    <small class="tabtitle"> Filters </small>
-                </a> -->
+                 
             </div>  
         </div>
         <div class="col-sm-2"></div>
     </div>  
- </div>
-<div class="row" style="margin-top: 5%;margin-bottom: 5%;">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-3">
-        <div class="row" >
-            <div class="col-sm-12">
-                <small class="tabtitle" style="color: var(--dark);font-size: 0.75rem; ">Categories</small>
+ </div> -->
 
-                <div class="filters">
-                    <input type="checkbox" id="Home" />
-                    <label for="Home" > <small class="filter_text">Home Furnishings</small> </label>
-                </div>
-                
-                <div class="filters">
-                    <input type="checkbox" id="Accessories" />
-                    <label for="Accessories" > <small class="filter_text">Accessories</small> </label>
-                </div>
-                <div class="filters">
-                    <input type="checkbox" id="JEWELERY" />
-                    <label for="JEWELERY" > <small class="filter_text">Jewelery</small> </label>
-                </div>
-                <div class="filters">
-                    <input type="checkbox" id="CULTURAL COLLECTABLES" />
-                    <label for="CULTURAL COLLECTABLES" > <small class="filter_text">Cultural Collectables</small> </label>
-                </div>
-            </div> 
-            <div class="row" style="margin-top:16%">
-                <small class="tabtitle" style="color: var(--dark);font-size: 0.75rem; margin-bottom: 4%;">Counties</small>
-                <div class="col-sm-6">   
-                    <div class="filters">
-                        <input type="checkbox" id="Turkana" />
-                        <label for="Nairobi"> <small class="filter_text">Nairobi</small> </label>
-                    </div> 
-                    <div class="filters">
-                        <input type="checkbox" id="Turkana" />
-                        <label for="Turkana" > <small class="filter_text">Turkana</small> </label>
-                    </div>
-                    <div class="filters">
-                        <input type="checkbox" id="Samburu" />
-                        <label for="Samburu" > <small class="filter_text">Samburu</small> </label>
-                    </div>
-                    <div class="filters">
-                        <input type="checkbox" id="Kajiado" />
-                        <label for="Kajiado" > <small class="filter_text">Kajiado</small> </label>
-                    </div>
-                    <div class="filters">
-                        <input type="checkbox" id="Narok" />
-                        <label for="Narok" > <small class="filter_text">Narok</small> </label>
-                    </div>
-
-                </div>  
-                <div class="col-sm-6" > 
-                    <div class="filters">
-                        <input type="checkbox" id="Pokot" />
-                        <label for="Pokot" > <small class="filter_text">West Pokot</small> </label>
-                    </div>  
-                    <div class="filters">
-                        <input type="checkbox" id="Marsabit" />
-                        <label for="Marsabit" > <small class="filter_text">Marsabit</small> </label>
-                    </div> 
-                    <div class="filters">
-                        <input type="checkbox" id="Baringo" />
-                        <label for="Baringo" > <small class="filter_text">Baringo</small> </label>
-                    </div> 
-                    <div class="filters">
-                        <input type="checkbox" id="Pokot" />
-                        <label for="Pokot" > <small class="filter_text">Mombasa</small> </label>
-                    </div> 
-                </div>
-
-                <a href="" style="margin-top: 8%;color:var(--dark); text-decoration: underline;">
-                    <small class="filter_text" > View more counties </small>
-                </a>
-            </div>
-
-        </div>
-    </div>
-    <div class="col-sm-8" style="padding-right: 4%;padding-left: 1%;">   
-        <p>
-            <small class="tabtitle" style="color: var(--dark);font-size: 0.75rem; margin-bottom: 4%;">6 results found in 3MS</small>
+<div class="meh">
+  <div id="cart" class="cart">
+    <div id="cart__overlay" class="cart__overlay"></div>
+    <div class="cart__contents">
+      <div class="cart__products">
+        <a
+          (click)="closeCart()"
+          style="cursor: pointer; text-decoration: underline"
+        >
+          <small style="letter-spacing: 1px">Close</small>
+        </a>
+        <h2 class="title">Your Cart</h2>
+        <p class="">
+          <small style="color: grey; letter-spacing: 1px"
+            >An overview of your selected products.</small
+          >
         </p>
-        <div class="row">
-            
-            <div class="col-sm-4 products">
-                <a style="color: black;cursor: pointer;" class="products" >
-                    <img src="./../../../assets/products/products-21.jpg" class="catBanner"/>
-
-                    <div style="display: flex; justify-content: space-around;margin-top: 6%;">
-                        <div>
-                            <h2 class="tabtitle" style="margin-top: 4%;font-weight: bold;">Clutch bags</h2>
-                            <p style=" letter-spacing: 1px;font-size: 12px; color: lightgrey;">Lomut, West Pokot</p>
-                            <h2 class="tabtitle" style="margin-top: 4%;color: var(--ushanga-yellow); font-weight: bold;">Kes. 1,230</h2>
-                        </div>
-                        &nbsp;
-                        <a class="js-toggle-cart" >                            
-                            <small class="filter_text cart-plus vertcent"><i class="fas fa-plus"></i> Add</small>
-                        </a>
-                        <a class="like">
-                            <i class="far fa-heart" data-count="2"></i>
-                        </a> 
-                            
-                    </div> 
-                                    
-                </a>
-            </div> 
-            <div class="col-sm-4 products">
-                <a style="color: black;cursor: pointer;" class="products" >
-                    <img src="./../../../assets/products/products-10.jpg" class="catBanner" />
-
-                    <div style="display: flex; justify-content: space-around;margin-top: 6%;">
-                        <div>
-                            <h2 class="tabtitle" style="margin-top: 4%;font-weight: bold;">Beaded Necklace</h2>
-                            <p style=" letter-spacing: 1px;font-size: 12px; color: lightgrey;">Lomut, West Pokot</p>
-                            <h2 class="tabtitle" style="margin-top: 4%;color: var(--ushanga-yellow); font-weight: bold;">Kes. 1,230</h2>
-                        </div>
-                        &nbsp;
-                         <a class="js-toggle-cart" >                            
-                            <small class="filter_text cart-plus vertcent"><i class="fas fa-plus"></i> Add</small>
-                        </a>
-                        <a class="like">
-                            <i class="far fa-heart" data-count="2"></i>
-                        </a> 
-                    </div> 
-                                    
-                </a>
-            </div>   
-            <div class="col-sm-4 products">
-                <a style="color: black;cursor: pointer;" class="products" >
-                    <img src="./../../../assets/products/products-11.jpg"  class="catBanner" />
-
-                    <div style="display: flex; justify-content: space-around;margin-top: 6%;">
-                        <div>
-                            <h2 class="tabtitle" style="margin-top: 4%;font-weight: bold;">Yellow Necklace</h2>
-                            <p style=" letter-spacing: 1px;font-size: 12px; color: lightgrey;">Lomut, West Pokot</p>
-                            <h2 class="tabtitle" style="margin-top: 4%;color: var(--ushanga-yellow); font-weight: bold;">Kes. 1,230</h2>
-                        </div>
-                        &nbsp;
-                         <a class="js-toggle-cart" >                            
-                            <small class="filter_text cart-plus vertcent"><i class="fas fa-plus"></i> Add</small>
-                        </a>
-                        <a class="like">
-                            <i class="far fa-heart" data-count="2"></i>
-                        </a> 
-                    </div> 
-                                    
-                </a>
-            </div> 
-            <div class="col-sm-4 products">
-                <a style="color: black;cursor: pointer;" class="products" >
-                    <img src="./../../../assets/products/products-15.jpg" class="catBanner"/>
-
-                    <div style="display: flex; justify-content: space-around;margin-top: 6%;">
-                        <div>
-                            <h2 class="tabtitle" style="margin-top: 4%;font-weight: bold;">Lime Ushanga</h2>
-                            <p style=" letter-spacing: 1px;font-size: 12px; color: lightgrey;">Lomut, West Pokot</p>
-                            <h2 class="tabtitle" style="margin-top: 4%;color: var(--ushanga-yellow); font-weight: bold;">Kes. 1,230</h2>
-                        </div>
-                        &nbsp;
-                         <a class="js-toggle-cart" >                            
-                            <small class="filter_text cart-plus vertcent"><i class="fas fa-plus"></i> Add</small>
-                        </a>
-                        <a class="like">
-                            <i class="far fa-heart" data-count="2"></i>
-                        </a> 
-                    </div> 
-                                    
-                </a>
-            </div> 
-            <div class="col-sm-4 products">
-                <a style="color: black;cursor: pointer;" class="products" >
-                    <img src="./../../../assets/products/products-47.jpg" class="catBanner"/>
-
-                    <div style="display: flex; justify-content: space-around;margin-top: 6%;">
-                        <div>
-                            <h2 class="tabtitle" style="margin-top: 4%;font-weight: bold;">Beaded sandles</h2>
-                            <p style=" letter-spacing: 1px;font-size: 12px; color: lightgrey;">Lomut, West Pokot</p>
-                            <h2 class="tabtitle" style="margin-top: 4%;color: var(--ushanga-yellow); font-weight: bold;">Kes. 1,230</h2>
-                        </div>
-                        &nbsp;
-                         <a class="js-toggle-cart" >                            
-                            <small class="filter_text cart-plus vertcent"><i class="fas fa-plus"></i> Add</small>
-                        </a>
-                        <a class="like">
-                            <i class="far fa-heart" data-count="2"></i>
-                        </a> 
-                    </div> 
-                                    
-                </a>
-            </div> 
-            <div class="col-sm-4 products">
-                <a style="color: black;cursor: pointer;" class="products" >
-                    <img src="./../../../assets/products/products-44.jpg" class="catBanner"/>
-
-                    <div style="display: flex; justify-content: space-around;margin-top: 6%;">
-                        <div>
-                            <h2 class="tabtitle" style="margin-top: 4%;font-weight: bold;">Gold Beaded Sandles</h2>
-                            <p style=" letter-spacing: 1px;font-size: 12px; color: lightgrey;">Lomut, West Pokot</p>
-                            <h2 class="tabtitle" style="margin-top: 4%;color: var(--ushanga-yellow); font-weight: bold;">Kes. 1,230</h2>
-                        </div>
-                        &nbsp;
-                         <a class="js-toggle-cart" >                            
-                            <small class="filter_text cart-plus vertcent"><i class="fas fa-plus"></i> Add</small>
-                        </a>
-                        <a class="like">
-                            <i class="far fa-heart" data-count="2"></i>
-                        </a> 
-                    </div> 
-                                    
-                </a>
-            </div> 
+        <div class="products">
+          <div *ngFor="let item of cartItems" class="product">
+            <div class="product__1">
+              <div class="product__thumbnail">
+                <img
+                  class="cart_image"
+                  [src]="item.imageURL"
+                  style="background-size: cover"
+                  alt=""
+                  srcset=""
+                />
+              </div>
+              <div class="product__details">
+                <div style="margin-bottom: 8px">
+                  <b>{{ item.name }}</b>
+                </div>
+                <div style="margin-bottom: 8px">
+                  <b
+                    ><p class="tabtitle" style="color: rgb(76, 190, 169)">
+                      {{ item.price | currency: "KES " }}
+                    </p>
+                  </b>
+                </div>
+                <div style="margin-top: 8px">
+                  <a href="#"
+                    ><small
+                      style="
+                        color: red;
+                        letter-spacing: 1px;
+                        text-decoration: underline;
+                      "
+                      >Remove</small
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div> 
         </div>
+      </div>
+      <div class="cart__totals">
+        <table class="totals">
+          <tbody>
+            <tr>
+              <td colspan="2">
+                <div class="collapser">
+                  <a href="#" class="collapser__label">
+                    <small
+                      style="
+                        color: var(--medium);
+                        letter-spacing: 1px;
+                        text-decoration: underline;
+                      "
+                      >Add a coupon code</small
+                    >
+                  </a>
+                  <div class="collapser__content">
+                    <div class="f">
+                      <div class="f70">
+                        <div class="input input--small">
+                          <label
+                            for="couponcode"
+                            class="input__label"
+                            style="
+                              color: var(--medium);
+                              text-decoration: underline;
+                            "
+                            >Coupon code
+                            <span class="optional">(optional)</span></label
+                          >
+                          <input
+                            style="margin-top: 4%"
+                            id="couponcode"
+                            type="text"
+                            class="input__input"
+                            data-mask=".{5,}"
+                          />
+                          <div class="input__error">
+                            <small>Please enter a valid coupon code.</small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="f30">
+                        <button
+                          class="btn btn--small btn--secondary btn--full js-add-gift-card vertcent"
+                        >
+                          Add
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="align-left font-normal tertiary">Subtotal</th>
+              <td class="align-right">KES. 4,335.00</td>
+            </tr>
+            <tr>
+              <th class="align-left">Total</th>
+              <td class="align-right"><b>KES. 4,335.00</b></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2" class="tertiary">
+                <small>Estimations based on Nairobi, Kenya</small>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="form__footer">
+          <button
+            class="btn btn--secondary first js-toggle-cart"
+            (click)="closeCart()"
+          >
+            <small style="color: white"> Continue Shopping</small>
+          </button>
+          <button (click)="payNow()"lass="btn btn--primary">
+            <small style="color: white"> Pay Now </small>
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
-<app-cart></app-cart>

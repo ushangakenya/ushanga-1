@@ -6,12 +6,12 @@ import { ShopRoutingModule } from './shop-routing.module';
 import { ShopComponent } from './shop.component';
 import { ShopnavComponent } from './shopnav/shopnav.component';
 import { CartComponent } from '../shared/cart/cart.component';
-
-
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 @NgModule({
   declarations: [
     ShopComponent,
-    ShopnavComponent
+    ShopnavComponent,
+    ComingSoonComponent
   ],
   imports: [
     CommonModule,

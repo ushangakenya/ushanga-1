@@ -22,31 +22,36 @@ export class CoopLoginComponent implements OnInit {
   fb!: any;
   downloadURL!: Observable<string>;
   cooperativeMembers:any;
+  ussdMembers:any;
   products:any;
   uploadProgress$: Observable<number> | any ;
   editImg:any = '';
+  transactions:any;
 
   constructor( private afs: AngularFirestore,private storage: AngularFireStorage,private formBuilder: FormBuilder,public auth:AuthService) {
     this.auth.getAllCooperativeMembers().subscribe((e:any) => {
       //Map the data to a more useable array
-      this.cooperativeMembers = e 
-       
+      this.cooperativeMembers = e   
+    })
+    this.auth.getUssdMembers().subscribe((e:any) => {
+      //Map the data to a more useable array
+      this.ussdMembers = e   
     })
 
     this.auth.getAllProducts().subscribe((e: any)=>{
-      e.forEach((q:any) => {  
-
-        this.afs.doc(`cooperative_members/${q.owner}`).valueChanges().subscribe((e: any)=>{
-          if(e.name != ''){
-            q.owner = e.name
-          }else{
-            q.owner = e.number            
-          }
-        })
-
-      }); 
+ 
       this.products = e
     })
+    
+    this.auth.getTransactions().subscribe((e: any)=>{
+ 
+      this.transactions = e
+
+      console.log('trans',e)
+
+       
+    })
+    
     
   }
 
@@ -59,11 +64,11 @@ export class CoopLoginComponent implements OnInit {
         price: ['', Validators.required],
         status: [''],
         county: [''],
-        location: ['', Validators.required],
-        owner: ['', Validators.required],
+        group: [''], 
         uploadDate: [''],
         imageURL: [''],
-        id: ['']
+        id: [''],
+        category: ['']
       } 
     );
 
@@ -73,14 +78,19 @@ export class CoopLoginComponent implements OnInit {
         cooperativeID: [''],
         price: ['', Validators.required],
         status: [''],
-        county: [''],
-        location: ['', Validators.required],
-        owner: ['', Validators.required],
+        group: [''], 
+        county: [''], 
         uploadDate: [''],
-        imageURL: ['']
+        imageURL: [''],
+        category: ['']
       } 
     );
  
+  }
+
+  getProductImage(id:any){
+    return this.auth.getProductOnce(id)
+     
   }
 
   getEditIMG(formImg:any){
@@ -96,7 +106,7 @@ export class CoopLoginComponent implements OnInit {
   setValues(form:any){ 
     
     this.submitted = false
-
+    console.log('form',form)
     this.formEdit = this.formBuilder.group(
       {
         id:[form.id],
@@ -104,10 +114,10 @@ export class CoopLoginComponent implements OnInit {
         cooperativeID: [''],
         price: [form.price, Validators.required],
         status: [''],
-        county: [''],
-        location: [form.location, Validators.required],
-        owner: ['', Validators.required],
+        group: [form.group],
+        county: [form.county],  
         uploadDate: [''],
+        category: [form.category],
         imageURL: [this.getEditIMG(form.imageURL)]
       } 
     );  
@@ -135,7 +145,7 @@ export class CoopLoginComponent implements OnInit {
     this.submittedEdit = true;
     
     console.log('------------------------------------- 1' +  this.formEdit.errors);
-    this.formEdit.patchValue({cooperativeID:this.auth.userID ,status:0, county:'Kajiado',uploadDate:today, imageURL:this.editImg})
+    this.formEdit.patchValue({cooperativeID:this.auth.userID ,status:0,uploadDate:today, imageURL:this.editImg})
     if (this.formEdit.invalid) { 
       return;
     }
@@ -152,7 +162,7 @@ export class CoopLoginComponent implements OnInit {
     this.submitted = true;
     
     console.log('------------------------------------- 1' +  this.form.getError);
-    this.form.patchValue({cooperativeID:this.auth.userID ,status:0, county:'Kajiado',uploadDate:today, imageURL:this.imageURL})
+    this.form.patchValue({cooperativeID:this.auth.userID ,status:1, uploadDate:today, imageURL:this.imageURL})
     if (this.form.invalid) { 
       return;
     }

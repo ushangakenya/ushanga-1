@@ -103,36 +103,35 @@
 <ng-template #authenticated>
     <div *ngIf="auth.user$ | async as user">
         <div *ngIf="user.admin">
-            <app-nav></app-nav>  
+            <app-nav></app-nav>
             <div class="app-header">
-                <div class="app-header-left">
-                    
+                <div class="app-header-left">  
                 </div>
                 <div class="app-header-right">
-                
-                <a 
-                class="btn btn-link text-dark js-toggle-cart" 
-                role="button" 
-                >
-                    <div style="position: relative;
-                    display:inline-block; ">
-                        <span class="badge notify-badge">3</span>
-                        <img class="cartsvg" src="./../../../../assets/shopping-bag-svgrepo-com.svg" data-count="2" style="height: 25px; width:25px" alt="">   
-                    </div>
-                </a>
-                <button class="profile-btn">
-                    
+                   
+                  <a 
+                  class="btn btn-link text-dark js-toggle-cart" 
+                  role="button" 
+                  >
+                      <div style="position: relative;
+                      display:inline-block; ">
+                          <span class="badge notify-badge">3</span>
+                          <img class="cartsvg" src="./../../../../assets/shopping-bag-svgrepo-com.svg" data-count="2" style="height: 25px; width:25px" alt="">   
+                      </div>
+                  </a>
+                  <button class="profile-btn">
+                      
                     <img *ngIf="!user.photoURL" src="https://assets.codepen.io/3306515/IMG_2025.jpg" />
-
+        
                     <img *ngIf="user.photoURL" [src]="user.photoURL">
                     &nbsp;&nbsp;
                     <span>{{ user.displayName }}</span>
-                </button>
-                
-                <button class="btn btn-custom shadow-0" (click)="auth.signOut()">Logout</button>
+                  </button>
+                  
+                  <button class="btn btn-custom shadow-0" (click)="auth.signOut()">Logout</button>
                 </div>
                 <button class="messages-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle">
                     <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
                 </button>
             </div>
@@ -140,56 +139,56 @@
                 <div class="col-sm-2">
                     <div class="app-sidebar vertcent">
                         <a href="" class="app-sidebar-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                             <polyline points="9 22 9 12 15 12 15 22" /></svg>
                         </a>
                         <a href="" class="app-sidebar-link">
-                        <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-pie-chart" viewBox="0 0 24 24">
+                          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-pie-chart" viewBox="0 0 24 24">
                             <defs />
                             <path d="M21.21 15.89A10 10 0 118 2.83M22 12A10 10 0 0012 2v10z" />
-                        </svg>
+                          </svg>
                         </a>
                         <a href="" class="app-sidebar-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                             <line x1="16" y1="2" x2="16" y2="6" />
                             <line x1="8" y1="2" x2="8" y2="6" />
                             <line x1="3" y1="10" x2="21" y2="10" /></svg>
                         </a>
                         <a href="" class="app-sidebar-link">
-                        <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-settings" viewBox="0 0 24 24">
+                          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-settings" viewBox="0 0 24 24">
                             <defs />
                             <circle cx="12" cy="12" r="3" />
                             <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
-                        </svg>
+                          </svg>
                         </a>
-                    </div>
+                      </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="projects-section">
                         <div class="projects-section-header">
-                        <p>Orders</p>
-                        <p class="time">August, 18</p>
+                          <p>Orders</p>
+                          <p class="time">August, 18</p>
                         </div>
                         <div class="projects-section-line">
-                        <div class="projects-status">
+                          <div class="projects-status">
                             <div class="item-status">
-                            <span class="status-number">45</span>
-                            <span class="status-type">In Progress</span>
+                              <span class="status-number">45</span>
+                              <span class="status-type">In Progress</span>
                             </div>
                             <div class="item-status">
-                            <span class="status-number">24</span>
-                            <span class="status-type">Saved</span>
+                              <span class="status-number">24</span>
+                              <span class="status-type">Completed</span>
                             </div>
                             <div class="item-status">
-                            <span class="status-number">62</span>
-                            <span class="status-type">Total Purchases</span>
+                              <span class="status-number">62</span>
+                              <span class="status-type">Total Purchases</span>
                             </div>
-                        </div>
-                        <div class="view-actions">
+                          </div>
+                          <div class="view-actions">
                             <button class="view-btn list-view active" title="List View">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
                                 <line x1="8" y1="6" x2="21" y2="6"></line>
                                 <line x1="8" y1="12" x2="21" y2="12"></line>
                                 <line x1="8" y1="18" x2="21" y2="18"></line>
@@ -198,110 +197,110 @@
                                 <line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
                             </button>
                             <button class="view-btn grid-view" title="Grid View">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
                                 <rect x="3" y="3" width="7" height="7"></rect>
                                 <rect x="14" y="3" width="7" height="7"></rect>
                                 <rect x="14" y="14" width="7" height="7"></rect>
                                 <rect x="3" y="14" width="7" height="7"></rect></svg>
                             </button>
-                        </div>
+                          </div>
                         </div>
                         <div class="project-boxes jsListView">
-                        <div class="project-box-wrapper">
+                          <div class="project-box-wrapper">
                             <div class="project-box" style="background-color: #fee4cb;">
-                            <div class="project-box-header">
+                              <div class="project-box-header">
                                 <span> August 18,2022</span> 
-                        </div>
-                        <div class="project-box-content-header">
+                          </div>
+                          <div class="project-box-content-header">
                             <p class="box-content-header">CLUTCH BAG</p>
                             <p class="box-content-subheader">KES. 1,230</p>
-                        </div>
-                        <div class="box-progress-wrapper">
+                          </div>
+                          <div class="box-progress-wrapper">
                             <p class="box-progress-header">Progress</p>
                             <div class="box-progress-bar">
-                            <span class="box-progress" style="width: 60%; background-color: #ff942e"></span>
+                              <span class="box-progress" style="width: 60%; background-color: #ff942e"></span>
                             </div>
                             <p class="box-progress-percentage">60%</p>
-                        </div>
-                        <div class="project-box-footer"> 
+                          </div>
+                          <div class="project-box-footer"> 
                             <div class="days-left" style="color: #ff942e;">
-                            2 Days Left
+                              2 Days Left
                             </div>
+                          </div>
                         </div>
-                        </div>
-                    </div>
-                    <div class="project-box-wrapper">
+                      </div>
+                      <div class="project-box-wrapper">
                         <div class="project-box" style="background-color: #e9e7fd;">
-                        <div class="project-box-header">
+                          <div class="project-box-header">
                             <span> August 18,2022</span> 
-                        </div>
-                        <div class="project-box-content-header">
+                          </div>
+                          <div class="project-box-content-header">
                             <p class="box-content-header">Beaded Necklace</p>
                             <p class="box-content-subheader">KES. 1,230</p>
-                        </div>
-                        <div class="box-progress-wrapper">
+                          </div>
+                          <div class="box-progress-wrapper">
                             <p class="box-progress-header">Progress</p>
                             <div class="box-progress-bar">
-                            <span class="box-progress" style="width: 50%; background-color: #4f3ff0"></span>
+                              <span class="box-progress" style="width: 50%; background-color: #4f3ff0"></span>
                             </div>
                             <p class="box-progress-percentage">50%</p>
-                        </div>
-                        <div class="project-box-footer">
-                            
+                          </div>
+                          <div class="project-box-footer">
+                             
                             <div class="days-left" style="color: #4f3ff0;">
-                            2 Days Left
+                              2 Days Left
                             </div>
+                          </div>
                         </div>
-                        </div>
-                    </div>
-                    <div class="project-box-wrapper">
+                      </div>
+                      <div class="project-box-wrapper">
                         <div class="project-box">
-                        <div class="project-box-header">
+                          <div class="project-box-header">
                             <span> August 18,2022</span> 
-                        </div>
-                        <div class="project-box-content-header">
+                          </div>
+                          <div class="project-box-content-header">
                             <p class="box-content-header">Gold - Yellow Sandles</p>
                             <p class="box-content-subheader">KES. 1,230</p>
-                        </div>
-                        <div class="box-progress-wrapper">
+                          </div>
+                          <div class="box-progress-wrapper">
                             <p class="box-progress-header">Progress</p>
                             <div class="box-progress-bar">
-                            <span class="box-progress" style="width: 80%; background-color: #096c86"></span>
+                              <span class="box-progress" style="width: 80%; background-color: #096c86"></span>
                             </div>
                             <p class="box-progress-percentage">80%</p>
-                        </div>
-                        <div class="project-box-footer"> 
+                          </div>
+                          <div class="project-box-footer"> 
                             <div class="days-left" style="color: #096c86;">
-                            2 Days Left
+                              2 Days Left
                             </div>
+                          </div>
                         </div>
-                        </div>
-                    </div>
-                    <div class="project-box-wrapper">
+                      </div>
+                      <div class="project-box-wrapper">
                         <div class="project-box" style="background-color: #ffd3e2;">
-                        <div class="project-box-header">
+                          <div class="project-box-header">
                             <span> August 18,2022</span> 
-                        </div>
-                        <div class="project-box-content-header">
+                          </div>
+                          <div class="project-box-content-header">
                             <p class="box-content-header">Lime Ushange</p>
                             <p class="box-content-subheader">KES. 1,230</p>
-                        </div>
-                        <div class="box-progress-wrapper">
+                          </div>
+                          <div class="box-progress-wrapper">
                             <p class="box-progress-header">Progress</p>
                             <div class="box-progress-bar">
-                            <span class="box-progress" style="width: 20%; background-color: #df3670"></span>
+                              <span class="box-progress" style="width: 20%; background-color: #df3670"></span>
                             </div>
                             <p class="box-progress-percentage">20%</p>
-                        </div>
-                        <div class="project-box-footer"> 
+                          </div>
+                          <div class="project-box-footer"> 
                             <div class="days-left" style="color: #df3670;">
-                            2 Days Left
+                              2 Days Left
                             </div>
+                          </div>
                         </div>
-                        </div>
-                    </div> 
+                      </div> 
                     </div>
-                </div>
+                  </div>
                 </div>
                 <div class="col-sm-4">
                     <div  style="margin-top: 6%;">
@@ -313,10 +312,10 @@
                                 <img src="./../../../assets/products/products-10.jpg" style="border-radius: 10px;width: 100%;height: auto;" alt="">
                             </div>
                             <div class="col-sm-8">
-                            <div class="vertcent" style="display: flex; justify-content: space-around;">
+                              <div class="vertcent" style="display: flex; justify-content: space-around;">
                                 <div>
                                     <h2 class="tabtitle" style="margin-top: 4%;font-weight: bold;">Beaded Necklace</h2>
-                                    <p style=" letter-spacing: 1px;font-size: 12px; color: lightgrey;">Lomut, West Pokot</p>
+                                    <p style=" letter-spacing: 1px;font-size: 12px; color: lightgrey;">Turkana</p>
                                     <h2 class="tabtitle" style="margin-top: 4%;color: var(--ushanga-yellow); font-weight: bold;">Kes. 1,230</h2>
                                 </div>
                                 &nbsp;
@@ -326,11 +325,11 @@
                                 <a class="like">
                                     <i class="far fa-heart" data-count="2"></i>
                                 </a> 
-                            </div> 
+                              </div> 
                             </div>
                             <div class="col-sm-2">
                             </div>
-
+        
                         </div>
                     </div>
                 </div>

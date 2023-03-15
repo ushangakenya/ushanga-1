@@ -87,6 +87,35 @@ export class AuthService {
           })
       );
     }
+    getTransactionDetails(id:any){
+      return this.afs.collection('products').doc(id).valueChanges().subscribe((p : any)=>{
+        return this.afs.collection('transactions').doc(p.transaction).valueChanges()
+      })
+    }
+
+    getUssdMembers(): any {  
+      this.coopCollection = this.afs.collection('ussd', ref => ref.where("countyName", "==", 'Samburu').orderBy("created", "desc"))
+      return this.coopCollection
+        .snapshotChanges().pipe(
+          map(actions => {
+          return actions.map(a => {
+              const data = a.payload.doc.data() as Blog;
+              const id = a.payload.doc.id;
+              return { id, ...data };
+          });
+          })
+      );
+    }
+
+    getProductOnce(id:any){
+       this.afs.collection('products').doc(id).get().subscribe(r=>{
+        return r
+      })
+    }
+
+    getProduct(id:any){
+      return this.afs.collection('products').doc(id).valueChanges()
+    }
 
     getAllProducts():any {
       this.coopCollection = this.afs.collection('products', ref => ref.orderBy('uploadDate','desc'));
@@ -102,13 +131,48 @@ export class AuthService {
       );
     }
 
+    getTransactions():any {
+      this.coopCollection = this.afs.collection('transactions');
+      return this.coopCollection
+        .snapshotChanges().pipe(
+          map(actions => {
+          return actions.map(a => {
+              const data = a.payload.doc.data() as any;
+              const id = a.payload.doc.id;
+              return { id, ...data };
+          });
+          })
+      );
+    }
+    getCartItems(): any { 
+      this.user$.subscribe(r=>{ 
+        this.coopCollection = this.afs.collection('users').doc(r.uid).collection('cart');
+        return this.coopCollection
+          .snapshotChanges().pipe(
+            map(actions => {
+            return actions.map(a => {
+                const data = a.payload.doc.data() as Blog;
+                const id = a.payload.doc.id;
+                return { id, ...data };
+            });
+            })
+        );
+      })
+
+    }
+
     createProduct(form: any){
       const productRef = this.afs.collection('products');
-      const productUp = { cooperativeID:this.userID , owner: form.owner,
-        county: form.county, location: form.location, name: form.name, price: form.price,
+      const productUp = { cooperativeID:this.userID ,
+        county: form.county, category:form.category, group: form.group, name: form.name, price: form.price,
         status: form.status, uploadDate: form.uploadDate, imageURL:form.imageURL
       };
       return productRef.add({ ...productUp }); 
+    }
+
+    addItemToCart(item:any){
+      const cartRef = this.afs.collection('users').doc(this.userID).collection('cart');
+      return cartRef.add(item)
     }
 
     updateProduct(form:any){ 
@@ -128,10 +192,7 @@ export class AuthService {
     }
 
     getOwner(id: any){ 
-      this.afs.doc(`cooperative_members/${id}`).valueChanges().subscribe((e: any)=>{
-        // console.log('e',e.name)
-        return e.name
-      })
+      
     }
   
 

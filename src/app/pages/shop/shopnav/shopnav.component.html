@@ -14,18 +14,7 @@
             >
                 <i class="far fa-heart" data-count="2"></i>
             </a> 
-             -->
-     
-            <a 
-            class="btn btn-link text-dark js-toggle-cart" 
-            role="button" 
-            >
-                <div style="position: relative;
-                display:inline-block; ">
-                    <span class="badge notify-badge">3</span>
-                    <img class="cartsvg" src="./../../../../assets/shopping-bag-svgrepo-com.svg" data-count="2" style="height: 25px; width:25px" alt="">   
-                </div>
-            </a>
+             --> 
 
             <a 
                 *ngIf="!(auth.user$ | async)"
@@ -64,7 +53,7 @@
         
                     <img *ngIf="user.photoURL" [src]="user.photoURL">
                     &nbsp;&nbsp;
-                    <span>{{ user.displayName }}</span>
+                    <span class="subtitle" style="color: black!important;">{{ user.displayName }}</span>
                   </div>
                 </a>  
             </span>

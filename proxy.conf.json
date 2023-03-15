@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "https://apis.ipayafrica.com/payments/v2/transact",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

@@ -4,7 +4,7 @@ import Swiper, { Autoplay, Mousewheel, Navigation, Pagination, Parallax } from '
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-  
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,12 +13,14 @@ import 'swiper/css/pagination';
 }) 
 export class HomeComponent implements OnInit {
 
-  defaultImage = 'https://miro.medium.com/max/441/1*9EBHIOzhE1XfMYoKz1JcsQ.gif';
 
-   
+
+  defaultImage = 'https://miro.medium.com/max/441/1*9EBHIOzhE1XfMYoKz1JcsQ.gif';
+ 
+
   constructor({ nativeElement }: ElementRef<HTMLImageElement>) {
     const supports = 'loading' in HTMLImageElement.prototype;
-
+    // this.triggerStkPush()
     if (supports) {
       nativeElement.setAttribute('loading', 'lazy');
     } else {
@@ -56,6 +58,9 @@ export class HomeComponent implements OnInit {
   toStringConv(image: any){
     return String(image);
   }
+
+  
+
 }
   
 
