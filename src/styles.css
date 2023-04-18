@@ -57,8 +57,9 @@ body {
 .approach{
   text-align: center; padding-top: 8%;padding-bottom: 8%;
 }
+
 .partners{
-  text-align: center; padding-top: 8%;padding-bottom: 0%;
+  text-align: center; padding-top: 1%;padding-bottom: 0%;
 }
 .footer{
   display: flex;
